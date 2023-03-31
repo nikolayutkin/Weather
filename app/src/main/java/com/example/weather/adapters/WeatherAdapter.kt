@@ -10,6 +10,9 @@ import com.example.weather.R
 import com.example.weather.databinding.ListItemBinding
 import com.squareup.picasso.Picasso
 
+const val celsius = "°C"
+
+
 class WeatherAdapter : ListAdapter<WeatherModel, WeatherAdapter.Holder>(Comparator()) {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view){
@@ -18,7 +21,7 @@ class WeatherAdapter : ListAdapter<WeatherModel, WeatherAdapter.Holder>(Comparat
         fun bind(item: WeatherModel) = with(binding){
             tvDate.text = item.time
             tvCondition.text = item.condition
-            tvTemp.text = item.currentTemp
+            tvTemp.text = item.currentTemp.ifEmpty { "${item.maxTemp}$celsius / ${item.minTemp}$celsius" }
             Picasso.get().load("https:" + item.imageUrl).into(im)
         }
     }
