@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="20ºC"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="60sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCity" />
