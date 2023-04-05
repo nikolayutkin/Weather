@@ -21,7 +21,7 @@ class WeatherAdapter(val listener: Listener?) : ListAdapter<WeatherModel, Weathe
 
         init {
             itemView.setOnClickListener {
-                itemTemp?.let { it1 -> listener?.onClic(it1) }
+                itemTemp?.let { it1 -> listener?.onClick(it1) }
             }
         }
 
@@ -55,6 +55,6 @@ class WeatherAdapter(val listener: Listener?) : ListAdapter<WeatherModel, Weathe
     }
 
     interface Listener{
-        fun onClic(item: WeatherModel)
+        fun onClick(item: WeatherModel)
     }
 }
